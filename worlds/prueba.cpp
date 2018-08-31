@@ -1,6 +1,6 @@
 #include <iostream>
-#include <libplayerc++/playerc++.h>//cabezeras player
 #include <cmath>
+#include <libplayerc++/playerc++.h>//cabezeras player
 #define BOOST_SIGNALS_NO_DEPRECATION_WARNING // Stop warning "Boost.Signals"
 
 using namespace std;
@@ -38,24 +38,23 @@ int main()
 	float i = 0.0;
 	while(1)
 	{
-
-
 		reybot.Read();
 		sensado senso;
 		actuado act;
 		double sen = senso.a * (180/3.141615);
 
- 		//act.avanzar();
+ 		act.avanzar();
 
-        // Funcion problema7:
- 		for(i=0.0; i<=1.0; i+=0.01)
+
+ 		if(senso.x != 5)
+ 		{	
+        // Funcion problema1:
+ 		for(i=0; i<=3; i+=1)
  		{
- 			act.u = (0.5) + i - (pow(i,2.0)/2.0);
- 			act.w = (0.25) - i;
- 			act.avanzar();
-
+ 			act.u = 1.4142+(2.8284*i);
+ 			act.w = -.19741+(.105*i);
  		}
-
+}
  // writes the the robot the desired position and velocity
 
 		cout.precision(4);

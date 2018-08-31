@@ -43,13 +43,14 @@ int main()
 		actuado act;
 		double sen = senso.a * (180/3.141615);
 
- 		act.avanzar();
+ 		//act.avanzar();
 
         // Funcion problema8:
- 		for(i=0; i<=1000; i+=0.0001)
+ 		for(i=0; i<=1; i+=0.1)
  		{
  			act.u = (1/4) + (1/2)*i - (pow(i,2)/-8);
- 			act.w = -(pow(i,2)/8) + (pow(i,2)/16);
+ 			act.w = -(pow(i,2)/8) + (pow(i,3)/16);
+ 			act.avanzar();
 
  		}
 
