@@ -2,6 +2,7 @@
 #include <cmath>
 #include <libplayerc++/playerc++.h>//cabezeras player
 #define BOOST_SIGNALS_NO_DEPRECATION_WARNING // Stop warning "Boost.Signals"
+#define pi 3.14159
 
 using namespace std;
 using namespace PlayerCc; //LIbreria para player
@@ -43,16 +44,16 @@ int main()
 		actuado act;
 		double sen = senso.a * (180/3.141615);
 
- 		act.avanzar();
 
 
  		if(senso.x != 5)
  		{	
         // Funcion problema1:
- 		for(i=0; i<=3; i+=1)
+ 		for(i=0; i<=1; i+=0.001)
  		{
- 			act.u = 1.4142+(2.8284*i);
- 			act.w = -.19741+(.105*i);
+ 			act.u = 1+(2*i);
+ 			act.w = 0.0816*i;
+			act.avanzar();
  		}
 }
  // writes the the robot the desired position and velocity
