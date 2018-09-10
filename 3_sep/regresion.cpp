@@ -9,9 +9,10 @@ class regresion
 {
 public:
 
-	int n;
+	int n,x,y;
 
 	double Ex=0.0,Ey=0.0,Exy=0.0,Ex2y=0.0,Ex3y=0.0,Ex2=0.0,Ex3=0.0,Ex4=0.0,Ex5=0.0,Ex6=0.0;
+    double Ex7=0.0,Ex8=0.0,Ex4y=0.0;
 
 	mat A,at,xt,yt;
 
@@ -19,16 +20,19 @@ public:
 	{
 		for(int i=0;i<=n;i++)
 		{
-			Ex+=A(i,0);
-			Ey+=A(i,1);
-			Exy+=A(i,0)*A(i,1);
-			Ex2+=pow(A(i,0),2);
-			Ex3+=pow(A(i,0),3);
-			Ex4+=pow(A(i,0),4);
-			Ex5+=pow(A(i,0),5);
-			Ex6+=pow(A(i,0),6);
-			Ex2y+=pow(A(i,0),2)*A(i,1);
-			Ex3y+=pow(A(i,0),3)*A(i,1);
+			Ex+=A(i,x);
+			Ey+=A(i,y);
+			Exy+=A(i,x)*A(i,y);
+			Ex2+=pow(A(i,x),2);
+			Ex3+=pow(A(i,x),3);
+			Ex4+=pow(A(i,x),4);
+			Ex5+=pow(A(i,x),5);
+			Ex6+=pow(A(i,x),6);
+			Ex7+=pow(A(i,x),7);
+			Ex8+=pow(A(i,x),8);
+			Ex2y+=pow(A(i,x),2)*A(i,y);
+			Ex3y+=pow(A(i,x),3)*A(i,y);
+			Ex4y+=pow(A(i,x),4)*A(i,y);
 
 		}
 	}
@@ -78,6 +82,24 @@ public:
 
 	}
 	
+	void regresion_cuarta()
+	{
+		xt << n+1 << Ex << Ex2 << Ex3 << Ex4 << endr
+		   << Ex << Ex2 << Ex3 << Ex4 << Ex5 << endr
+		   << Ex2 << Ex3 << Ex4 << Ex5 << Ex6 << endr
+		   << Ex3 << Ex4 << Ex5 << Ex6 << Ex7 << endr
+		   << Ex4 << Ex5 << Ex6 << Ex7 << Ex8 << endr;
+
+		yt << Ey << endr
+		   << Exy << endr
+		   << Ex2y << endr
+		   << Ex3y << endr
+		   << Ex4y << endr;
+
+		at = inv(xt)*yt;
+
+
+	}
 };
 
 int main()
@@ -85,30 +107,54 @@ int main()
 	regresion valores;
 	mat A;
 	int n;
-    //A.load("test.txt", arma_ascii);
+	string datos;
 
-	A << 10 << 1 <<endr
-	  << 12 << 2 <<endr
-	  << 15 << 8 <<endr
-	  << 30 << 20 <<endr
-	  << 45 << 70 <<endr;
+	/*A << 10 << 1 << endr
+	  << 12 << 2 << endr
+	  << 15 << 8 << endr
+	  << 30 << 20 << endr
+	  << 45 << 70 << endr;*/
 
-    cout << "Introduce Numero n: " << endl;
+	cout << "\nNombre del archivo de datos a leer: ";
+	getline(cin,datos);
+
+   A.load(datos, arma_ascii);
+
+    cout << "\nIntroduce Numero n: ";
     cin >> valores.n;
+    cout << "\nIntroduce columna de x: ";
+    cin >> valores.x;
+    cout << "\nIntroduce columna de y: ";
+    cin >> valores.y;
     valores.A = A;
 
     valores.tabla();
 
-    cout << "\n" <<valores.Ex << "\t" << valores.Ex2 << "\t" << valores.Ex3 << "\t" << valores.Ex4 << "\t" << valores.Ex5 << " " << valores.Ex6 << endl;
+    cout << "\nlista de grados de regresion:\n1.- Lineal\n2.-Cuadrada\n3.-Cubica\n4.-Cuarta\n";
+    cout << "Que grado de regresion desea?: ";
+    cin >> n;
+
+    if(n==1)
+    	valores.regresion_lineal();
+    else if (n==2)
+    	valores.regresion_cuadrada();
+    else if (n==3)
+    	valores.regresion_cubica();
+    else
+    	valores.regresion_cuarta();
+
+    cout << "\n\n" <<valores.Ex << "\t" << valores.Ex2 << "\t" << valores.Ex3 << "\t" << valores.Ex4 << "\t" << valores.Ex5 << " " << valores.Ex6 << endl;
     cout << valores.Ey << "\t" << valores.Exy << "\t" << valores.Ex2y << "\t" << valores.Ex3y << "\t" << endl;
 
-    valores.regresion_lineal();
+    //valores.regresion_cuarta();
 
-    valores.xt.print("\n matriz: ");
+    valores.xt.print("\n matriz xt: ");
 
-    valores.yt.print("\n matriz is: ");
+    valores.yt.print("\n matriz yt: ");
 
-    valores.at.print("\n resultado: ");
+    valores.at.print("\n matriz at: ");
+
+    //valores.at.save("regresion.txt", arma_ascii);
 
 	return 0;
 }

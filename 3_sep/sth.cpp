@@ -9,14 +9,15 @@ int main()
 {
 	mat A,B;
 	double s(0.0),th(0.0),x(10.0),y(1.0),raiz(0.0);
-	double yi(1.28);
+	double yi(1.28),ths(0.0);
 	int i=0;
 
    for(float xi=10.14;xi<=45;xi+=0.14)
     {
     	s = (pow((xi-x),2.0))+(pow((yi-y),2.0));
     	raiz = sqrt(s);
-    	th = atan((yi-y)/(xi-x));
+    	th = atan((yi-y)/(xi-x))-ths;
+      ths=th;
 
     	i+=1;
 
@@ -35,7 +36,7 @@ int main()
     }
 
     //B.print("Matriz Salida: ");
-    B.save("test.txt", arma_ascii);
+    B.save("mal.txt", arma_ascii);
 
 	return 0;
 } 

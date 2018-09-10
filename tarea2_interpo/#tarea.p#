@@ -1,0 +1,13 @@
+unset log
+unset label
+set xtic auto
+set ytic auto
+set title "Tarea_1"
+set xlabel "x"
+set ylabel "y"
+set xrange [10:45]
+set yrange [1:70]
+set grid
+set autoscale
+f(x) = 0.0006546*x**4 - 0.0621943*x**3 + 1.9995743*x**2 - 24.366017*x + 100.35064
+plot 'dat.txt' using 2:4 with lines title 'linea' , f(x) w l title 'funcion'
