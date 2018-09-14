@@ -44,7 +44,7 @@ floorplan
 amigobot
 (
 	name "amigobot"
-	pose [0 0 0 0]
+	pose [10 1 0 0]
 	localization "gps"
     localization_origin [ 0 0 0 0 ]
 )

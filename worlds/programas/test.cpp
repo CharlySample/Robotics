@@ -16,7 +16,8 @@ class sensado
         double x = pp.GetXPos();
         double y = pp.GetYPos();
         double a = pp.GetYaw();
-        double s, s1, sf, ang;
+        double s, s1, sf,izq,der;
+        static double ang;
 
         double obstaculo()
         {
@@ -24,20 +25,29 @@ class sensado
             s1 = 0;
             sf = 0;
 
-            for(int i=0;i<=2;i++)
-                s = rp[i] + s;
-            for(int n=5;n<=7;n++)
-                s1 = rp[n] + s1;
-            for(int m=3;m<=4;m++)
-                sf = rp[m] + sf;
+            s = rp[0]; // LEFT
+            s1 = rp[5]; //RIGHT
+            izq = rp[1]; //esquina izq
+            der = rp[4]; //esquina der
 
-            if(s < 3 and s1 > 3)
-                ang = s<6 ? -0.80 : -0.20  ;
-            else if(s1 < 3 and s > 3)
-               ang = s1<6 ? 0.80 : 0.20  ;
-            else if(sf < 3 and s > 4 and s1 > 4)
-                ang = rp[3]<rp[4] ? -0.80 : 0.80;
-            else if(sf < 4 and s < 4 and s1 < 4)
+            //for(int i=0;i<=2;i++)
+              //  s = rp[i] + s; // RIGHT
+            //for(int n=5;n<=7;n++)
+             //   s1 = rp[n] + s1; // LEFT
+            for(int m=2;m<=3;m++)
+                sf = rp[m] + sf; // FRONT
+
+            if(s < 1 and s1 > 1)
+                ang = -0.5  ;
+            if(s1 < 1 and s > 1)
+               ang = 0.5  ;
+           if(izq < 2 and der > 2)
+               ang = -0.5  ;
+           if(der < 2 and izq > 2)
+               ang =  0.50  ;
+            //if(sf < 3.5 and s > 3.5 and s1 > 3.5)
+                //ang = rp[3]<rp[4] ? -0.80 : 0.80;
+            if(sf < 2.5)
                 ang = 0.90;
             else
                 ang = 0.00;
@@ -47,6 +57,8 @@ class sensado
 
     };
 
+double sensado::ang=0.0;
+
 class actuador
 {
     public:
@@ -54,7 +66,7 @@ class actuador
         { 
             sensado angulo;
 
-            pp.SetSpeed(0.2,angulo.obstaculo());
+            pp.SetSpeed(0.4,sensado::ang);
 
         }
 };

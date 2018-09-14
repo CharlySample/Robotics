@@ -3,7 +3,7 @@ define sonar sensor
   size [0.01 0.05 0.01]
   range [.5 3.5]
   fov 40
-  samples 360
+  samples 8
   color_rgba [ 0 1 1 1 ] 
 )
 
