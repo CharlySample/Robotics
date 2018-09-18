@@ -16,7 +16,7 @@ int main()
   double smraiz=0.0,tiempo=0.0;
 	int i=0;
 
-  y=1*pow(x,2)-2*x+2;
+  y=2*x-1;
   //yi=100.3506-24.36601*(x+0.14)+1.999574*pow((x+0.14),2)-0.062194*pow((x+0.14),3)+0.00065461*pow((x+0.14),4);
 
  //gnu cout << yx << endl;
@@ -26,7 +26,7 @@ int main()
 
    for(float xi=1.1;xi<=3.0;xi+=0.1)
     {
-      yi=1*pow(x,2)-2*xi+2;
+      yi=2*xi-1;
     	s = (pow((xi-x),2.0))+(pow((yi-y),2.0));
     	raiz = sqrt(s);
       //smraiz = raiz;

@@ -23,7 +23,7 @@ class sensa
 	public:
 
 		void sensar()
-		{	
+		{
 //////////////////////////// Captura e impresion de odometros ////////////////////////
 			reybot.Read();
      		long double x = pp.GetXPos();
@@ -31,7 +31,7 @@ class sensa
 	    	long double a = pp.GetYaw();
 	    	cout.precision(4);
    			cout << fixed << " (" << x << " , " << y << ")\tyaw: " << a << "\t" << endl;
-		}	
+		}
 };
 
 /////////////////////////// Clase de planeacion /////////////////////////////////////////
@@ -169,7 +169,7 @@ class actua
 	 	{
 	 		mat W1(3,1),W2(5,1),W3(8,1);
 	 		W1.zeros(),W2.zeros(),W3.zeros();
-	 	
+
 	 	///////////////////////////// Serie de Ifs para la seleccion de trayectoria /////////////////////////////////////
 	 		if(i<3.8)
 	 		{
@@ -177,14 +177,14 @@ class actua
 				{
 					W1 << 0 << endr
 			  	       << pow(i,0) << endr;
-			  
-					u += (dot(trans(planea::u1),W1));
+
+					u += (dot(trans(planea::u1),W1))*5;
  					w = dot(trans(planea::w1),W1);
  					pp.SetSpeed(u,w);
  					cout << i << "\t" << w << endl;
- 					usleep(200000);
+ 					usleep(190000);
 
-				} 
+				}
 			}
 
 			pp.SetSpeed(0,0);
@@ -203,7 +203,7 @@ class actua
  				cout << i << "\t" << u << endl;
  				usleep(100000);
 
-		} 
+		}
 	}
 
 			if(i<27.4)
@@ -225,15 +225,15 @@ class actua
  						cout << i << "\t" << u << endl;
  					    usleep(50000);
 
-				} 
+				}
 
 			}
 
 			if(i>=27.4)
 			i=0;
-	 	
+
 	 }
-	
+
 };
 
 mat planea::F;
@@ -255,6 +255,6 @@ int main()
 
 
 	}
- 	
+
 	return 0;
 }
