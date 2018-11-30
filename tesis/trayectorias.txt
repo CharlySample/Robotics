@@ -1,0 +1,11 @@
+Trayectoria 1:
+S = 25 Theta = 3*pi/4 
+
+Trayectoria 2:
+S = 25 Theta = pi
+
+Trayectoria 3:
+S = 32 Theta = -pi/2
+
+Trayectoria 4:
+S = 23 Theta =  -pi/8

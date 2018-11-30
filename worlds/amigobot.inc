@@ -4,13 +4,14 @@ define sonar sensor
   range [.5 3.5]
   fov 40
   samples 360
-  color_rgba [ 0 1 1 1 ] 
+  color_rgba [ 0 1 1 1 ]
 )
 
 
 ### AMIGOBOT ####
 
 # The AmigoBot sonar array
+
 define amigo_sonar ranger
 (
   sonar ( pose [ 0.073 0.105 0 90 ] )
@@ -22,6 +23,8 @@ define amigo_sonar ranger
 	sonar ( pose [ -0.146 -0.060 0 -145 ] )
 	sonar ( pose [ -0.146 0.060 0 145 ] )
 )
+
+
 
 define amigobot position
 (

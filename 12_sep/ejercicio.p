@@ -9,6 +9,6 @@ set zlabel "Vm,alpha"
 set grid
 set autoscale
 #splot 'Vm.txt' using 1:2:3 with p title 'Vm' linetype 8, 'Vm.txt' using 1:2:4 with p title 'Valpha' linetype 2
-splot 'Vm.txt' using 1:2:4 with p title 'sd' linetype 3
+splot 'test.txt' using 1:2:4 with p title 'sd' linetype 3
 
 

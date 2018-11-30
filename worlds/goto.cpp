@@ -5,7 +5,7 @@
 using namespace std;
 using namespace PlayerCc; //LIbreria para player
 
-PlayerClient reybot("localhost"); // forma de declarar conexion al bot y su name.
+PlayerClient reybot("localhost",6666); // forma de declarar conexion al bot y su name.
 RangerProxy rp(&reybot,0); //usar ranger
 Position2dProxy pp(&reybot,0); //usar position2d
 

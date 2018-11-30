@@ -13,6 +13,10 @@ int main()
         fann_type input[799];
         string gen[]={"21.txt","22.txt","23.txt","24.txt","91.txt","92.txt","93.txt","94.txt","a1.txt","a2.txt","a3.txt","a4.txt","u1.txt","u2.txt","u3.txt","u4.txt"};
 
+	   cout << "casos salidas" <<  endl << " -1 -1 -> 2" 
+                << endl << " -1 1 -> 9 " << endl << " 1 -1 -> a "
+                << endl << " 1 1 -> u" << endl << endl;
+
 
         for(int o=0; o<=15; o++)
         {
@@ -20,6 +24,7 @@ int main()
 
                 mat a;
                 a.load(gen[o],raw_ascii);
+
 
                 for(int i=0; i<=799; i++)
                         input[i] = a(i,0);

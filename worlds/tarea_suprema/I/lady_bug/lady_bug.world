@@ -1,0 +1,50 @@
+include "lady_bug.inc"
+
+quit_time 3600
+paused 0
+
+
+#------ CONFIGURACION DE VENTANA ---------
+
+window
+(
+  size [ 760 760 ] # in pixels
+  scale 36.995   # pixels per meter
+  center [ -9.299  0.460 ]
+  rotate [ 0.000  0.000 ]
+  show_data 1              # 1=on 0=off
+  show_footprints 1
+  show_grid 1
+  )
+
+define floorplan model
+(
+	color "black"
+	boundary 1
+	gui_grid 0
+	gui_nose 1
+	gui_move 0
+	gui_outline 0
+	gripper_return 0
+	fiducial_return 0
+	obstacle_return 1
+	ranger_return 1.000
+)
+
+floorplan
+(
+	name "cave"
+	size [20.000 20.000 0.800]
+	pose [0.000 0.000 0.000 0.000]
+	bitmap "../../../imagenes/lady_bug.png"
+)
+
+#-------- ROBOT -----------------------
+
+amigobot
+(
+	name "amigobot"
+	pose [-5.519 -2.718 0.000 0.000]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)

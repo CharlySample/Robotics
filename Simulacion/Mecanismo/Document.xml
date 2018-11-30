@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+ FreeCAD Document, see http://www.freecadweb.org for more information...
+-->
+<Document SchemaVersion="4" ProgramVersion="0.15R$WCREV$" FileVersion="1">
+    <Properties Count="14">
+        <Property name="Comment" type="App::PropertyString">
+            <String value=""/>
+        </Property>
+        <Property name="Company" type="App::PropertyString">
+            <String value=""/>
+        </Property>
+        <Property name="CreatedBy" type="App::PropertyString">
+            <String value=""/>
+        </Property>
+        <Property name="CreationDate" type="App::PropertyString">
+            <String value="2017-12-12T10:48:20Z"/>
+        </Property>
+        <Property name="FileName" type="App::PropertyString">
+            <String value="/home/judypaws/Simulacion/Mecanismo.fcstd"/>
+        </Property>
+        <Property name="Id" type="App::PropertyString">
+            <String value=""/>
+        </Property>
+        <Property name="Label" type="App::PropertyString">
+            <String value="Mecanismo"/>
+        </Property>
+        <Property name="LastModifiedBy" type="App::PropertyString">
+            <String value=""/>
+        </Property>
+        <Property name="LastModifiedDate" type="App::PropertyString">
+            <String value="2018-10-08T15:57:39Z"/>
+        </Property>
+        <Property name="License" type="App::PropertyString">
+            <String value="All rights reserved"/>
+        </Property>
+        <Property name="LicenseURL" type="App::PropertyString">
+            <String value="http://en.wikipedia.org/wiki/All_rights_reserved"/>
+        </Property>
+        <Property name="Material" type="App::PropertyMap">
+            <Map count="0">
+            </Map>
+        </Property>
+        <Property name="Meta" type="App::PropertyMap">
+            <Map count="0">
+            </Map>
+        </Property>
+        <Property name="Uid" type="App::PropertyUUID">
+            <Uuid value="2738ead9-684b-414c-8d0a-f36f9c390c5c"/>
+        </Property>
+    </Properties>
+    <Objects Count="4">
+        <Object type="Part::Feature" name="E0" />
+        <Object type="Part::Feature" name="E1" />
+        <Object type="Part::Feature" name="Soporte" />
+        <Object type="Part::Feature" name="L3" />
+    </Objects>
+    <ObjectData Count="4">
+        <Object name="E0">
+            <Properties Count="3">
+                <Property name="Label" type="App::PropertyString">
+                    <String value="E0"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="-1.524000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.008726535498" Q2="0.000000000000" Q3="0.999961923064"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape.brp"/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="E1">
+            <Properties Count="3">
+                <Property name="Label" type="App::PropertyString">
+                    <String value="E1"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="50.800000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape1.brp"/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="Soporte">
+            <Properties Count="3">
+                <Property name="Label" type="App::PropertyString">
+                    <String value="Soporte"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="0.000000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape2.brp"/>
+                </Property>
+            </Properties>
+        </Object>
+        <Object name="L3">
+            <Properties Count="3">
+                <Property name="Label" type="App::PropertyString">
+                    <String value="L3"/>
+                </Property>
+                <Property name="Placement" type="App::PropertyPlacement">
+                    <PropertyPlacement Px="96.520000000000" Py="0.000000000000" Pz="0.000000000000" Q0="0.000000000000" Q1="0.000000000000" Q2="0.000000000000" Q3="1.000000000000"/>
+                </Property>
+                <Property name="Shape" type="Part::PropertyPartShape">
+                    <Part file="PartShape3.brp"/>
+                </Property>
+            </Properties>
+        </Object>
+    </ObjectData>
+</Document>

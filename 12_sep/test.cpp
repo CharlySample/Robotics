@@ -55,7 +55,7 @@ int main()
 			Vv=Vo1+Vo2+Vo3+Vo4+Vo5;
 
 			A(2,0) = Vm;
-			A(3,0) = Vv+Vm;
+			A(3,0) = 0.02+(Vv+Vm);
 			A = trans(A);
 			B = join_cols(B,A); 
 		}

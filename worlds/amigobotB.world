@@ -1,4 +1,5 @@
-include "amigobot.inc"
+include "amigobotB.inc"
+#include "amigobotB1.inc"
 
 quit_time 3600
 paused 0
@@ -11,7 +12,7 @@ window
   size [ 635.000 666.000 ] # in pixels
   scale 36.995   # pixels per meter
   center [ 0  0 ]
-  rotate [ 0  0 ]		
+  rotate [ 0  0 ]
   show_data 1              # 1=on 0=off
   show_footprints 1
   show_grid 1
@@ -34,9 +35,9 @@ define floorplan model
 floorplan
 (
 	name "cave"
-	size [25.000 25.000 0.800]
+	size [55.000 55.000 0.800]
 	pose [0.000 0.000 0.000 0.000]
-	bitmap "imagenes/cave.png"
+	bitmap "imagenes/tarea.png"
 )
 
 #-------- ROBOT -----------------------
@@ -45,6 +46,78 @@ amigobot
 (
 	name "amigobot"
 	pose [0 -10 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot1"
+	pose [2 -11 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot2"
+	pose [2 11 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot3"
+	pose [10 10 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot4"
+	pose [2 3 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot5"
+	pose [2 15 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot6"
+	pose [11 11 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot7"
+	pose [5 -11 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot8"
+	pose [-1 -1 0 0]
+	localization "gps"
+    localization_origin [ 0 0 0 0 ]
+)
+
+amigobot
+(
+	name "amigobot9"
+	pose [-11 -11 0 0]
 	localization "gps"
     localization_origin [ 0 0 0 0 ]
 )

@@ -250,8 +250,8 @@ int main()
 	for(;;)
 	{
 		os.sensar();
-		op.planear();
-		oa.actuar();
+		//op.planear();
+		//oa.actuar();
 
 
 	}
